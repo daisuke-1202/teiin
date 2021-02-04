@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="boy0.png" id="a">
+    </div>
+    <form method="post">
+        <input type="button" value="←戻る" onclick="back()">
+        <input type="button" value="すすむ→" onclick="go()">
+    </form>
+    <script src="jquery.js"></script>
+    <script>
+        var gazo=["boy0.png","boy01.png","boy02.png","boy03.png"];
+        var no=0;
+        function go(){
+            no++;
+            $("#a").attr("src",gazo[no]);
+            if(no==4){
+                no--;
+            }
+        }
+        function back(){
+            no--;
+            $("#a").attr("src",gazo[no]);
+            if(no==-1){
+                no++;
+            }
+        }
+    </script>
+</body>
+</html>
+
+<style>
+    input{
+        width: 15rem;
+        height: 3rem;
+    }
+</style>
